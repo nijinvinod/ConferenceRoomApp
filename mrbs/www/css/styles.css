@@ -1,0 +1,335 @@
+.wrapWord{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.panel{
+	position: fixed;
+	width:30%;
+	height:100%;
+	left:0;
+	top:0;
+	text-align: center;
+	background-color: #fafafa;
+}
+
+.panelAvailableColor{
+	background-color:  #90EE90;
+	color:#000;
+}
+
+.panelAvailableColor a{
+	color:#000;
+}
+
+.panelBlockedColor{
+	background:  #c52f2b url('../img/events.png') repeat;
+	color: #fff;
+}
+.panelEditColor{
+	background-color: #fff;
+	color: #000;
+}
+.panelRoomColor{
+	background-color: #1a1a1a;
+	color: #fff;
+}
+
+
+.panelBlockedColor a{
+	color: #fff;
+}
+
+.panel .roomName{
+	font-size: 1.8em;
+	font-weight: bold;
+	margin-top:10px;
+}
+
+.panel .clock{
+	font-size:5em;
+	font-weight: bold;
+}
+.panel .day{
+	font-size: 1.4em;
+	margin-top: -10px;
+	text-transform: capitalize;
+}
+.panel .date{
+	font-size: 1.8em;
+	text-transform: capitalize;
+}
+.panel.panelAvailableColor .logo{
+	width:100px;
+	height:30px;
+	margin:0 auto;
+	margin-top:30px;
+	background: url('../img/avnet-logo.png') center no-repeat;
+	background-size: 100% 100%;
+}
+
+.panel .menu{
+	position: absolute;
+	width:100%;
+	bottom:2px;
+	text-align: center;
+}
+
+#inactivityBar{
+	color:#c52f2b;
+}
+.content{
+	position: relative;
+	width:70%;
+	margin-left: 30%;
+	background: #1a1a1a;
+	color: #fff;
+	text-transform: capitalize;
+}
+
+.loadingContent{
+	height:30px;
+	margin:45% auto;
+	font-size:1em;
+	color:#fff;
+	text-align: center;
+	color:#90EE90;
+}
+.no-booking{
+	color: #ffff00;
+	text-align: center;
+	margin:10px;
+}
+
+.topContent{
+	margin:30px 20px 20px 40px;
+}
+.topContent .available{
+	font-size:6em;
+	font-weight: bold;
+}
+.topContent .tillTime{
+	font-size:2em;
+	margin-top:-10px;
+}
+.bottomContent{
+	position:fixed;
+	width:60%;
+	left:30%;
+	bottom:5px;
+	padding-left:40px;
+}
+
+.topic{
+	font-size:2.5em;
+}
+
+.section{
+	margin:5px 20px;
+	position: relative;
+}
+
+.heading{
+	position: absolute;
+	width:100%;
+	height:30px;
+} 
+
+ul.nav{
+	list-style: none;
+	padding:0;
+	margin:0;
+	text-align: left;
+}
+ul.nav li{
+	font-size:1.5em;
+	padding:5px 10px;
+	border-bottom: 1px solid #1a1a1a;
+}
+
+.android-input{
+	border:0;
+	border-bottom:1px solid #efefef;
+	background: transparent;
+	width: 100%;
+	padding-left: 5px;
+	color: #fff;
+	margin-top: 5px;
+}
+.android-input:focus{
+	outline: 0;
+}
+
+.datepickers{
+	display:table;
+	width:100%;
+	height:100px;
+	margin: 20px 0;
+}
+
+.datepickers .cell{
+	display: table-cell;
+	width:50%;
+	height:100px;
+}
+
+input[type="date"]{
+	border:1px solid #1a1a1a;
+	width:80%;
+	height:30px;
+	margin-bottom: 5px;
+}
+input[type="time"]{
+	border:1px solid #1a1a1a;
+	width:60%;
+	height:25px;
+}
+
+a.buttonLink, input[type="button"]{
+	border:0;
+	background: #90EE90;
+	min-width:80px;
+	padding:5px 10px;
+}
+.eventMessages{
+	color: #ffff00;
+	text-align: center;
+}
+
+
+.eventDetails .eventTitle{
+	font-size:1em;
+	font-weight: bold;
+}
+
+.eventOwner{
+	color: #515151;
+	font-weight: normal;
+}
+.active{
+	background-color: #1a1a1a;
+	color: #fff;
+}
+.pref{
+	color:#fff
+}
+.prefFillers{
+	margin: 10% auto;
+    width: 80%;
+}
+.settingsDiv{
+	position:fixed;
+	top:10px;
+	right:10px;
+	font-size:1em;
+	color:#fff;
+}
+
+.popUpMessageSection{
+	position: fixed;
+	top:0%;
+	left:0%;
+	width:100%;
+	height:100%;
+	padding-top:25%;
+	color: #90EE90;
+	z-index:9999;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.resultSpace{
+	margin:20px;
+	display: table;
+	width:80%;
+}
+.resultSpace .cell{
+	display: table-cell;
+	vertical-align: top;
+}
+.resultSpace .cell:first-child{
+	font-size:4em;
+	width:60px;
+}
+
+/* ---  Rooms --- */
+.box{
+	position:relative;
+	width:95%;
+	margin: 0 auto;
+	margin-bottom:5px;
+	padding: 5px 10px;
+	background: #90EE90;
+	color: #000;
+}
+.box .roomName{
+	font-size:1.5em;
+	text-transform: capitalise;
+}
+.box .roomStatus, .eventOwner{
+	font-size:1em;
+	text-transform: uppercase;
+}
+.box .roomTimings{
+	position:absolute;
+	right:10px;
+	top:14px;
+	font-size:1.5em;
+	height:1.5em;
+}
+.boxAvailable, .greenBox{
+	background: #90EE90;
+	color: #000;
+}
+.boxBlocked, .redBox{
+	background: #b20000;
+	color: #fff;
+}
+
+.availBlock{
+	display:inline-block;
+	padding:5px 15px;
+	color: #000;
+	font-size:1em;
+	background: #87CEFA;
+	margin:2px;
+}
+
+/** -- Today -- */
+
+
+.event-time{
+	font-weight: bold;
+}
+.event-title{
+	margin-top: -3px;
+	font-size:1em;
+}
+
+.eventTodayTab{
+	display: table;
+}
+.eventToday{
+	display: table-row;
+}
+.eventTimings{
+	display: table-cell;
+	vertical-align: middle;
+	width:100px !important;
+	font-size:1.5em;
+}
+.eventDetails{
+	display: table-cell;
+	width:400px;
+}
+
+.toast{
+	background: #aaa;
+	color:#000;
+	margin:10px auto;
+	text-align:center;
+	border-radius:15px;
+	width:80%;
+	padding:10px;
+}

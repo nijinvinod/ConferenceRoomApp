@@ -1,0 +1,63 @@
+<div ng-show = "serverPref == 'true'">
+	<div class="panel {{roomDetails.panelStatus}}Color" ng-controller = "clockController">
+		<div class="roomName">{{roomName}}</div>
+		<div class="clock">{{clock}}</div>
+		<div class="date">{{date}}</div>
+		<div class="logo"></div>
+		<div id="test"></div>
+		<div class="menu smallHeading"><a href="#/edit"><i class="icon-menu"></i> EVENTS</a></div>
+	</div> <!-- End of Panel -->
+	
+	<div class = "content">
+		<div ng-show = "ajaxData == false">
+			<div class="loadingContent"><i class="icon-busy smallHeadingXX"></i><br/> Loading {{roomName}}'s status</div>
+		</div>
+		<div ng-show = "networkErrorData == true">
+			<div class="loadingContent">
+				<i class="icon-warning smallHeadingXX"></i><br/> 
+				Cannot connect to Server<br/>
+				<div ng-click="getRoomDetails()"><i class="icon-spinner2"></i> Retry</div>
+			</div>
+		</div>
+		<div ng-show = "ajaxData == true && networkErrorData == false">
+			<div ng-show = "roomDetails.panelStatus == 'panelAvailable'" class="topContent">
+				<div class="available">Available</div>
+				<div class="tillTime">Until {{roomDetails.tillTime}}</div>
+			</div>
+			<div ng-show = "roomDetails.panelStatus == 'panelBlocked'" class="topContent">
+				<div class="largeHeading"><b>Meeting In Progress</b></div>
+				<div class="largeHeadingX">{{roomDetails.currentEventTime}}</div>
+				<div class="smallHeading wrapWord">{{roomDetails.currentEventName}}</div>
+				<!--<div class="shortHeading">{{roomDetails.currentEventOwner}}</div>-->
+			</div>
+		
+			<div class="bottomContent">
+				<div ng-show="roomDetails.nextEventName != ''">
+					<div class="smallHeading colorYellow"><i class="icon-bell"></i> Next {{roomDetails.nextEventTime}} </div>
+					<!-- <div class="smallHeadingX">{{roomDetails.nextEventTime}}</div> -->
+					<div class="smallHeading wrapWord">{{roomDetails.nextEventName}}</div>
+					<!-- <div class="shortHeading">{{roomDetails.nextEventOwner}}</div>-->
+				</div>
+				<div ng-show="roomDetails.nextEventName == ''">
+					<div class="smallHeading colorYellow"><i class="icon-bell"></i> Next Meeting </div>
+					<div class="smallHeading">No Events Till End of Day </div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- End of Content -->
+	
+	<div class="settingsDiv" ng-click="showSettings()"><i class="icon-pushpin"></i></div>
+</div>
+
+<div ng-show="serverPref=='false'" class="section pref">
+	<h1 class="miniHeading">MRBS Configuration</h1>
+	<div class="prefFillers">
+		<input type="text" class="android-input smallHeadingXX" name="eventName" ng-model="roomNamePref" placeholder="Room Name"/>
+		<input type="text" class="android-input miniHeading" name="organizer" ng-model="serverUrlPref" placeholder="Server IP"/>
+		<div class="alignRight" style="margin-top:5%">
+			<input type="button" value="SAVE" ng-click="savePref()"/>
+			<input type="button" value="CANCEL" ng-click="cancelPref()"/>
+		</div>
+		<div ng-show="serverMessage.length > 0" class="toast">{{serverMessage}}</div>
+	</div>
+</div>

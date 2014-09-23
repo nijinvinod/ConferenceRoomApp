@@ -1,0 +1,24 @@
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-gen\com\avnet\mrbs\R.java \
+ : C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable-hdpi\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable-hdpi\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable-ldpi\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable-ldpi\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable-mdpi\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable-mdpi\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable-xhdpi\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\drawable-xhdpi\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\values\strings.xml \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\res\xml\config.xml \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable-hdpi\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable-hdpi\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable-ldpi\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable-ldpi\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable-mdpi\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable-mdpi\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable-xhdpi\icon.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\res\drawable-xhdpi\splash.png \
+C:\Users\Atechian\Desktop\mrbs\platforms\android\ant-build\AndroidManifest.xml \

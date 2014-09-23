@@ -1,0 +1,112 @@
+<div class="panel {{panelStatus}}Color" ng-controller="clockController">
+	<ul class="nav">
+		<li ng-repeat="menu in menus" ng-click="triggerBaseCalls(menu)" ng-class="{active : isSelected(menu)}">
+			<i class="icon-{{menu.icon}}"></i> {{menu.name}}
+		</li>
+	</ul>
+	<div class="roomName"><a href="#/"><i class="icon-undo"></i> {{roomName}}</a></div>
+	<div class="clock">{{clock}}</div>
+	<div class="date">{{date}}</div>
+	<div id="inactivityBar"></div>
+</div> <!-- End of Panel -->
+
+<div ng-show="content == 'createEvent'" class="content">
+	<div class="section">
+		<div ng-show="createView == 'create'" class="fillers">
+			<div ng-show="eventMessageBoard" class="eventMessages"><i class="icon-warning"></i> {{eventMessages}}</div>
+			<input type="text" class="android-input smallHeadingXX" name="eventName" ng-model="title" placeholder="Event Name"/>
+			<input type="text" class="android-input miniHeading" name="organizer" ng-model="organizer" placeholder="Organizer"/>
+			<div class="datepickers">
+				<div class="cell">
+					<div>Event Starts on</div>
+					<input type="date" ng-model="startDate"/>
+					<div>Event Starts at</div>
+					<input type="time" ng-model="startTime"/>
+				</div>
+				<div class="cell">
+					<div>Event Ends on</div>
+					<input type="date" ng-model="endDate"/>
+					<div>Event Ends at</div>
+					<input type="time" ng-model="endTime"/>
+				</div>
+			</div>
+			<div class="alignRight">
+				<input type="button" value="SAVE" ng-click="saveEvent()"/>
+				<input type="button" value="CANCEL" ng-click="cancelEvent()"/>
+			</div>
+		</div>
+		<div ng-show="createView == 'result'" class="fillers">
+			<div class="colorYellow smallHeading"><i class="icon-checkmark"></i> Room Booked Successfully</div>
+			<div class="resultSpace">
+				<div class="cell"><i class="icon-calendar"></i></div>
+				<div class="cell">
+					<div>{{title}}</div>
+					<div>{{roomName}}</div>
+				</div>
+			</div>
+			<div class="alignRight">
+				<input type="button" value="NEW EVENT" ng-click="newEvent()"/>
+				<a href="#/home"class="buttonLink">OK DONE</a>
+			</div>
+		</div>
+	</div>
+	<div ng-show="messageBoard" class="popUpMessageSection">
+		<i class="icon-busy smallHeading"></i><br/>
+		{{popUpMessage}}
+	</div>
+</div> <!-- End of Content -->
+
+<div ng-show="content == 'todaysEvent'" class="content">
+	<div class="section">
+		<div ng-show = "ajaxData == false" class="fillers">
+			<div class="loadingContent"><i class="icon-busy smallHeadingXX"></i><br/> Loading Today's Events</div>
+		</div>
+		<div ng-show = "networkErrorData == true">
+			<div class="loadingContent">
+				<i class="icon-warning smallHeadingXX"></i><br/> 
+				Cannot connect to Server<br/>
+				<div ng-click="getTodayEvents()"><i class="icon-spinner2"></i> Retry</div>
+			</div>
+		</div>
+		<div ng-show="ajaxData == true  && networkErrorData == false" class="fillers">
+			<div class="smallHeading">Today's Booking</div>
+			<div ng-show="nobooking == ''" class="no-booking">
+				<div class="largeHeadingXX"><i class="icon-calendar"></i></div>
+				No Bookings
+			</div>
+
+			<div ng-repeat="event in events" class="box">
+				<div class="shortHeading event-time"><i class="icon-bell"></i> {{event.timings}} </div>
+				<div class="event-title wrapWord">{{event.title}}</div>
+			</div>
+			<!--
+			<div class="smallHeading">Today's Availability</div>
+			<div class="availBlock" ng-repeat="avail in avails" ng-click="createEvent(avail)"><i class="icon-pushpin"></i> {{avail}}</div>
+			-->
+		</div>
+	</div>
+</div> <!-- End of Content -->
+
+<div ng-show="content == 'showRooms'" class="content contentPlain">
+	<div class="section">
+		<div ng-show = "ajaxData == false">
+			<div class="loadingContent"><i class="icon-busy smallHeadingXX"></i><br/> Loading Room Details</div>
+		</div>
+		<div ng-show = "networkErrorData == true">
+			<div class="loadingContent">
+				<i class="icon-warning smallHeadingXX"></i><br/> 
+				Cannot connect to Server<br/>
+				<div ng-click="getAllRoomDetails()"><i class="icon-spinner2"></i> Retry</div>
+			</div>
+		</div>
+		<div ng-show="ajaxData == true && networkErrorData == false">
+			<div ng-repeat="room in rooms | orderBy: room.status" class="box box{{room.status}}">
+				<div class="roomName"><i class="icon-{{room.status}}"></i> {{room.name}}</div>
+				<div class="roomStatus">{{room.status}}</div>
+				
+				<div ng-show="room.nextEventTime!='EOD'" class="roomTimings">Until {{room.nextEventTime.slice(11,16)}}</div>
+				<div ng-show="room.nextEventTime=='EOD'" class="roomTimings">Until {{room.nextEventTime}}</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- End of Content -->
